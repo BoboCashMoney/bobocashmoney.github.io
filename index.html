@@ -48,6 +48,17 @@
     .desk-shortcuts button{background:#e0dacb;color:#37402f;border:1px solid #ede8dc;border-radius:4px;padding:12px 18px;box-shadow:0 3px 0 #777d6d;font:11px var(--mono);transition:background .2s,transform .2s}
     .desk-shortcuts button:hover{background:#f3eee2;transform:translateY(-1px)}
     .desk-shortcuts button:active{transform:translateY(2px);box-shadow:0 1px 0 #777d6d}
+    /* A brief entrance on page load. Everything stays usable during the reveal. */
+    @keyframes studio-settle{from{opacity:.25;transform:scale(1.035)}to{opacity:1;transform:scale(1)}}
+    @keyframes studio-rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes studio-fade{from{opacity:0}to{opacity:1}}
+    .hero-art{animation:studio-settle 1.15s cubic-bezier(.22,1,.36,1) backwards}
+    .hero-copy>.eyebrow{animation:studio-rise .65s cubic-bezier(.22,1,.36,1) .1s backwards}
+    .hero h1{animation:studio-rise .8s cubic-bezier(.22,1,.36,1) .18s backwards}
+    .hero-description{animation:studio-rise .75s cubic-bezier(.22,1,.36,1) .28s backwards}
+    .hotspot{animation:studio-fade .6s ease .42s backwards}
+    .hero-foot{animation:studio-rise .65s cubic-bezier(.22,1,.36,1) .46s backwards}
+    .hotspot:focus-visible,.hero-foot:focus-within{animation:none}
     .build-layout{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,390px),1fr));gap:42px;align-items:start}
     .keyboard-story{font-size:14px!important;line-height:1.9!important;margin:0 0 26px!important;color:#626d58}
     .build-facts{border-top:1px solid #d2d5c8;margin:0}
@@ -178,7 +189,7 @@
       },
       about: {
         label: 'About me / Ivan Wang', title: 'Hi, I’m Ivan.', icon: 'iw', width: 690, height: 700,
-        body: "<div class=\"profile-card\">\n  <div class=\"profile-monogram\" aria-hidden=\"true\"><span>iw</span></div>\n  <div><div class=\"profile-name\">Ivan Wang</div><div class=\"profile-subtitle\">Mechanical engineering &amp; data science<br>Vanderbilt University</div></div>\n</div>\n<p>I was born in LA, grew up mostly in Vancouver, and now I’m in Nashville studying Mechanical Engineering and Data Science at Vanderbilt. I got hooked on optimization and tradeoff problems back in high school, and that’s basically how I ended up here.</p>\n<p>When I’m not in class, I’m probably watching or playing soccer or golf. Paulo Dybala and Viktor Hovland are my guys. I’m a total dog person, and I love being outdoors and exploring new spots. If I’m staying in, you’ll find me building mechanical keyboards, hanging out with friends, or hopping on Minecraft 1.8 playing PVP modes like The Bridge and ranked Bedwars.</p>\n<p>Fun fact: “Bobo” comes from my Minecraft username, BoboCashMoney. It started with my friends in high school, and before long most of my teachers and classmates were calling me that too.</p>\n<div class=\"window-actions\"><button class=\"window-link\" type=\"button\" data-note=\"resume\">My résumé ↗</button><button class=\"window-link subtle\" type=\"button\" data-note=\"contact\">Say hello ↗</button></div>"
+        body: "<div class=\"profile-card\">\n  <div class=\"profile-monogram\" aria-hidden=\"true\"><span>iw</span></div>\n  <div><div class=\"profile-name\">Ivan Wang</div><div class=\"profile-subtitle\">Mechanical engineering &amp; data science<br>Vanderbilt University</div></div>\n</div>\n<p>I was born in Los Angeles, grew up mostly in Vancouver, British Columbia, and now I’m in Nashville, Tennessee, studying Mechanical Engineering and Data Science. In high school, I fell in love with optimization and tradeoff problems, and that curiosity led me straight to my major. Although I think it's totally natural for interests to change the more we learn, right now I’m interested in combining engineering and data to design smarter, more efficient systems, especially ones where balancing competing tradeoffs is the real challenge.</p>\n<p>Outside of class, I’m all about sports. I love soccer and golf, and my favorites are Paulo Dybala and Viktor Hovland. I’m also a huge dog lover (cats, hamsters, etc, are cool too) and enjoy being outdoors and exploring new places. When I want to unwind, I’m usually hanging out with friends, building/keeping up with mechanical keyboards, or playing Minecraft 1.8, especially PVP modes like The Bridge and ranked Bedwars.</p>\n<p>Fun fact: “Bobo” comes from my Minecraft username, BoboCashMoney. It started with my friends in high school, and eventually most of my teachers and classmates were calling me Bobo too.</p>\n<div class=\"window-actions\"><button class=\"window-link\" type=\"button\" data-note=\"resume\">My résumé ↗</button><button class=\"window-link subtle\" type=\"button\" data-note=\"contact\">Say hello ↗</button></div>"
       },
       resume: {
         label: 'Résumé / Ivan Wang', title: 'My résumé.', icon: '▤', width: 820, height: 740, resume: true, body: ''
